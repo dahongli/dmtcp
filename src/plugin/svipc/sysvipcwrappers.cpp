@@ -231,6 +231,7 @@ dlsym_with_rtld_next(const char *symbol) {
   return dlsym_retval;
 }
 
+#if 0
 //   We need to wrap dlsym to disable and re-enable ckpt.  But then,
 // dlsym(RTLD_NEXT, ...) no longer works, since glibc:dlsym() looks up
 // the stack to find the caller's library, and discovers a DMTCP library
@@ -260,6 +261,7 @@ dlsym(void *handle, const char *symbol)
   DMTCP_PLUGIN_ENABLE_CKPT();
   return ret;
 }
+#endif
 
 extern "C"
 int
