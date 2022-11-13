@@ -120,6 +120,10 @@ processInfo_EventHook(DmtcpEvent_t event, DmtcpEventData_t *data)
     break;
 
   case DMTCP_EVENT_RESUME:
+    {
+      int dummy_resume = 1;
+      while (dummy_resume);
+    }
     resume();
     break;
 

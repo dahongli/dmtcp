@@ -671,6 +671,10 @@ ThreadList::waitForAllRestored(Thread *thread)
   Thread_RestoreSigState(thread);
 
   if (thread == motherofall) {
+    {
+      int dummy_foo = 1;
+      while (dummy_foo);
+    }
     DMTCP_RESTART_PAUSE(4);
   }
 }
